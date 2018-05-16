@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 gallery" *ngIf="dogActive">
+      <img [@dogInOut]="changeStateDog" 
+      class="img-dog-active" 
+      [src]="dogActive?.path" alt="Dog">
+
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ng-container *ngFor="let dog of dogs">
+        <img class="img-dog" [src]="dog.path" alt="Dog" (click)="setActive(dog)">
+      </ng-container>
+    </div>
+  </div>
+</div>
+<p>{{changeStateDog}}</p>

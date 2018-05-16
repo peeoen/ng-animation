@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <img [@photo]="photoState" class="babo" src="assets/images/babo.png" alt="babo">
+    </div>
+  </div>
+  <div class="row">
+    <button mat-button (click)="changeState('move')">
+      Move
+    </button>
+    <button mat-button (click)="changeState('enlarge')">
+      Enlarge
+    </button>
+    <button mat-button (click)="changeState('spin')">
+      Spin
+    </button>
+  </div>
+</div>

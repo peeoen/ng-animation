@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <div [@photosAnimation]="photos.length">
+        <div *ngFor="let photo of photos">
+            <img  [src]="photo" >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <p>Enter & Leave</p>
+      <button mat-raised-button color="primary" (click)="add()">Add</button>
+      <button mat-raised-button color="warn" (click)="remove()">Remove</button>
+      <ul>
+        <li *ngFor="let hero of heroes" [@heroState]="hero.state" (dblclick)="enterAndLeave(hero)" (click)="hero.toggleState()">
+          {{hero.name}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
