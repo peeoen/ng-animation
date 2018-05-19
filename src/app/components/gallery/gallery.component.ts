@@ -1,10 +1,11 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('dogInOut', [
       state('active', style({transform: 'rotateY(0deg)'})),
@@ -23,7 +24,7 @@ export class GalleryComponent implements OnInit {
   dogs: Dog [] = [];
   changeStateDog = 'inactive';
   dogActive: Dog;
-  constructor() { }
+  constructor(private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
     for (let i = 1; i <= 8; i++) {
@@ -34,16 +35,22 @@ export class GalleryComponent implements OnInit {
   }
 
   setActive(dog: Dog) {
-    if (this.changeStateDog === 'active') {
+   if (this.changeStateDog === 'active') {
       setTimeout(() => {
         this.changeStateDog = 'inactive';
+        this.cd.markForCheck();
       }, 0);
     }
 
     setTimeout(() => {
       this.dogActive = dog;
       this.changeStateDog = 'active';
+      this.cd.markForCheck();
     }, 200);
+  }
+
+  stopAnimation() {
+    this.changeStateDog = 'reset';
   }
 
 }
