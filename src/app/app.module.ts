@@ -12,6 +12,7 @@ import { MultipleStateComponent } from './components/multiple-state/multiple-sta
 import { KeyframesComponent } from './components/keyframes/keyframes.component';
 import { AnimationListComponent } from './components/animation-list/animation-list.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { GallerySlideComponent } from './components/gallery-slide/gallery-slide.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     MultipleStateComponent,
     KeyframesComponent,
     AnimationListComponent,
-    GalleryComponent
+    GalleryComponent,
+    GallerySlideComponent
   ],
   imports: [
     BrowserModule,

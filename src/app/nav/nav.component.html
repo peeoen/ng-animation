@@ -6,7 +6,7 @@
     [attr.role]="isHandset ? 'dialog' : 'navigation'"
     [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
     [opened]="!(isHandset | async)!.matches">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-toolbar color="primary">List</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item 
       routerLink="leave-in"
@@ -32,6 +32,11 @@
       routerLink="gallery"
       routerActive="active">Gallery Dog</a>
     </mat-nav-list>
+    <mat-nav-list>
+      <a mat-list-item 
+      routerLink="gallery-slide"
+      routerActive="active">Gallery Dog Slide</a>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
@@ -43,7 +48,7 @@
         *ngIf="(isHandset | async)!.matches">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Application Title</span>
+      <span>Animations</span>
     </mat-toolbar>
     <div class="container">
       <router-outlet></router-outlet>

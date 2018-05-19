@@ -1,3 +1,4 @@
+import { GallerySlideComponent } from './components/gallery-slide/gallery-slide.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AnimationListComponent } from './components/animation-list/animation-list.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
     { path: 'keyframes', component: KeyframesComponent },
     { path: 'animation-list', component: AnimationListComponent },
     { path: 'gallery', component: GalleryComponent },
+    { path: 'gallery-slide', component: GallerySlideComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <section id="content">
+        <div id="img-list">
+          <div class="img-dog" *ngFor="let dog of dogs"
+          [@dogState]="dog.state" 
+          [ngClass]="{
+            'dog-active' : dog.state == 'active',
+            'dog-left-active' : dog.state == 'leftActive',
+            'dog-right-active' : dog.state == 'rightActive'
+          }">
+            <img 
+            [src]="dog.path" alt="">
+          </div>
+        </div>
+        </section>
+    </div>
+  </div>
+</div>
+<div style="text-align: center;margin-top: 50px;">
+    <button mat-raised-button color="primary" (click)="transformState(active-1)" [disabled]="active <= 0">
+        left
+      </button>
+      <button mat-raised-button color="primary" (click)="transformState(active+1)" [disabled]="active === dogs.length -1">
+        right
+      </button>
+
+
+</div>
